@@ -16,7 +16,7 @@ namespace ContentConsole
 			var bannedwords = kernel.Get<IBannedWords>();
 			var ContentProcessManager = new ContentProcessManager(bannedwords);
 	        string content = string.Empty;
-			Console.WriteLine("Scanned the text:");
+			Console.WriteLine("Enter text to Scan:");
 	         content = Console.ReadLine();
 			Console.WriteLine(content);
 			Console.WriteLine("Total Number of negative words: " + ContentProcessManager.GetNegativeWordCount(content));

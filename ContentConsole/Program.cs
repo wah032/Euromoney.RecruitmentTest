@@ -15,16 +15,9 @@ namespace ContentConsole
 			kernel.Load(Assembly.GetExecutingAssembly());
 			var bannedwords = kernel.Get<IBannedWords>();
 			var ContentProcessManager = new ContentProcessManager(bannedwords);
-			string bannedWord1 = "swine";
-            string bannedWord2 = "bad";
-            string bannedWord3 = "nasty";
-            string bannedWord4 = "horrible";
-
-            string content =
-                "The weather in Manchester in winter is bad. It rains all the time - it must be horrible for people visiting.";
-
-
+	        string content = string.Empty;
 			Console.WriteLine("Scanned the text:");
+	         content = Console.ReadLine();
 			Console.WriteLine(content);
 			Console.WriteLine("Total Number of negative words: " + ContentProcessManager.GetNegativeWordCount(content));
 			Console.WriteLine("Scanned the text:");
@@ -39,7 +32,6 @@ namespace ContentConsole
 						Console.WriteLine("Scanned the text:");
 						Console.WriteLine("orginal Text" + content);
 						break;
-
 					case "n":
 						break;
 				}

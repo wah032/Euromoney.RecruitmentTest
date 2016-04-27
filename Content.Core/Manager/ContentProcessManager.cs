@@ -19,7 +19,7 @@ namespace Content.Core.Manager
 		public int GetNegativeWordCount(string phrase)
 		{
 			var bannedwordslist = BannedWordsRepository.GetBannedWord();
-			return bannedwordslist.Count(phrase.Contains);
+			return bannedwordslist.Sum(bannedword => phrase.Split(' ').Count(word => bannedword.Equals(word.Trim(new char[] {'.'}))));
 		}
 
 		public string FilterNegativeWords(string phrase)
